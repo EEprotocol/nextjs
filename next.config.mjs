@@ -13,7 +13,7 @@ const nextConfig = {
 const withMDX = createMDX({
   // Add markdown plugins here, as desired
   extension: /\.(md|mdx)$/,
-  option:{
+  options:{
     remarkPlugins:[remarkGfm],
   },
 })
