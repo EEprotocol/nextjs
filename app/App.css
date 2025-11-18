@@ -1,0 +1,128 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  z-index: -1;
+  overflow-x: hidden;
+  background-color: white;
+  color: black;
+}
+.initplay {
+  width: 100 vw; /* 親の幅を固定 */
+  z-index: 0;
+  position: relative;
+  margin-bottom: 8pt;
+}
+.initplay .initvideo {
+  width: 100%; /* 親の幅に合わせて縮小 */
+  height: 60vh; /* アスペクト比維持 */
+  aspect-ratio: 100/45;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  z-index: 0;
+}
+#linecanvas {
+  z-index: 100;
+}
+.initplay .initvideo video {
+  width: 100%; /* 親の幅に合わせて縮小 */
+  object-fit: cover; /* コンテナいっぱいに表示、はみ出た部分はトリミング */
+  object-position: center; /* トリミング位置を中央に */
+  opacity: 0.24;
+  z-index: 0;
+  pointer-events: none;
+}
+.initplay canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+.buttons {
+  position: absolute;
+  top: 50%;
+  left: 00%;
+  transform: translate(0%, -50%);
+  margin-left: 15pt;
+  z-index: 2; /* 動画とキャンバスの上 */
+}
+@keyframes blinkColor {
+  0% {
+    color: black;
+  }
+  50% {
+    color: white;
+  }
+  100% {
+    color: black;
+  }
+}
+.custom-btn {
+  display: inline-block;
+  font-size: 1rem;
+  border: none;
+  /*border: 2px solid white;*/
+  background: rgba(0, 0, 0, 0);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 2.2vh;
+  margin-bottom: 2.2vh;
+}
+@font-face {
+  font-family: "KogniGear"; /* 任意の名前 */
+  src: url("/asset/KogniGear.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+.initplay .buttons .custom-btn {
+  font-family: "KogniGear", sans-serif;
+  font-size: max(4vh, 20pt);
+  color: black;
+}
+.initplay .buttons .custom-btn:hover {
+  animation: blinkColor 0.03s infinite;
+}
+body {
+  min-height: 100vh;
+}
+
+svg {
+  width: 600px;
+  max-height: 90vh;
+}
+.h2 {
+  color: red;
+}
+
+#outlink a {
+  text-decoration: none;
+  opacity: 1;
+  margin-left: 20pt;
+  margin-top: 10px;
+}
+#outlink a img {
+  width: auto;
+  height: 3vh;
+  min-height: 25px;
+}
+#outlink a:hover {
+  opacity: 0.632;
+}
+#mainlogo {
+  margin-left: 15pt;
+  margin-top: 40px;
+  height: max(10vh, 90px);
+  min-height: 60px;
+}
+.rire {
+  margin-top: 10pt;
+  text-align: center;
+}
+@media(max-width:768px){
+  #linecanvas{
+    display: none;
+  }
+}

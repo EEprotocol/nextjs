@@ -1,0 +1,69 @@
+@font-face {
+  font-family: "BIZUDPMincho"; /* 任意の名前 */
+  src: url("/asset/BIZUDPMincho-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.introduce {
+  display: flex;
+  align-items: flex-end;
+  margin-top: 30px;
+}
+.name {
+  font-size: 35pt;
+  font-weight: bold;
+  font-family: "BIZUDPMincho", sans-serif;
+  margin-bottom: 0;
+  margin-left: 20px;
+  white-space: nowrap;
+  letter-spacing: 4px;
+  padding: 0;
+  text-box-trim: trim-both;
+}
+#portraitimage {
+  height: 100px;
+  margin-left: 10px;
+}
+.description {
+  font-size: 15pt;
+  font-weight: regular;
+  font-family: "BIZUDPMincho", sans-serif;
+  margin-bottom: 50px;
+  margin-top: 10pt;
+  margin-left: 20px;
+  /*white-space: nowrap;*/
+}
+#maillink {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  color: black;
+}
+.contentimage {
+  height: auto;
+  margin-left: 20px;
+}
+.contentimage img {
+  max-width: 100%; /* 親幅を超えない */
+  max-height: 100%; /* 親高さを超えない */
+  width: auto;
+  height: auto;
+}
+#colortag {
+  width: 127px;
+  height: 240px;
+  margin-left: 10px;
+  margin-bottom: 3vh;
+  cursor: pointer;
+  position: relative;
+}
+#contdate {
+  rotate: -90deg;
+  padding-left: 0;
+  position: absolute;
+  font-size: 15pt;
+  font-weight: bold;
+  font-family: "BIZUDPMincho", sans-serif;
+  left: -15pt;
+  bottom: 20pt;
+}

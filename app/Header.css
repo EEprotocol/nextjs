@@ -1,0 +1,208 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  z-index: -1;
+  overflow-x: hidden;
+}
+@keyframes blinkColor {
+  0% {
+    color: black;
+  }
+  50% {
+    color: white;
+  }
+  100% {
+    color: black;
+  }
+}
+@font-face {
+  font-family: "KogniGear"; /* 任意の名前 */
+  src: url("/asset/KogniGear.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  min-height: 100vh;
+}
+
+svg {
+  width: 600px;
+  max-height: 90vh;
+}
+.h2 {
+  color: red;
+}
+
+#outlink a {
+  text-decoration: none;
+  opacity: 1;
+  margin-left: 20pt;
+}
+#outlink a img {
+  width: auto;
+  height: 3vh;
+}
+#outlink a:hover {
+  opacity: 0.632;
+}
+#headmainlogo {
+  margin-left: 0;
+  margin-top: 0;
+  height: max(10vh, 90px);
+  min-height: 50px;
+}
+.rire {
+  margin-top: 10pt;
+  text-align: center;
+}
+
+.app-bg {
+  margin-top: 40px;
+  display: flex; /* 横並び配置 */
+  width: 100vw;
+  flex-direction: row;
+  align-items: center;
+}
+
+#pagetitle {
+  font-family: "KogniGear", sans-serif;
+  font-size: max(5vh, 25pt);
+  cursor: pointer;
+  margin-left: 20px;
+}
+#logobox {
+  position: absolute;
+  left: 15pt;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* 円の大きさを変えたい場合ここだけ変更 */
+:root {
+  --circle-size: 50px; /* ← 任意で80pxや100pxに変えてよい */
+}
+
+#menuicon {
+  position: fixed;
+  right: 3vw;
+  cursor: pointer;
+  z-index: 9999;
+}
+/* --- 円 ------------------------------------------------- */
+.circle {
+  width: var(--circle-size);
+  height: var(--circle-size);
+  border-radius: 50%;
+  border: 3px solid black;
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* --- 中に入る三角形の共通設定 ---------------------------- */
+#triangle,
+#rtriangle {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform-origin: center center;
+  pointer-events: none;
+}
+
+/* --- 時計回りに回る三角形 -------------------------------- */
+#triangle {
+  animation: spinScaleCW 1.7s linear infinite;
+}
+
+/* --- 反時計回りに回る三角形 ------------------------------ */
+#rtriangle {
+  animation: spinScaleCCW 1.3s linear infinite;
+}
+
+@keyframes spinScaleCW {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) scale(0.8);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(180deg) scale(2);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg) scale(0.8);
+  }
+}
+
+/* 反時計回り + スケール */
+@keyframes spinScaleCCW {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) scale(0.8);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(-180deg) scale(2);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-360deg) scale(0.8);
+  }
+}
+
+#buttons .custom-btn {
+  font-family: "KogniGear", sans-serif;
+  font-size: max(4vh, 20pt);
+  color: black;
+  margin-top: 2.2vh;
+  margin-bottom: 2.2vh;
+}
+.menu-open #buttons .custom-btn:hover {
+  animation: blinkColor 0.03s infinite;
+}
+.menu-closed {
+  animation: fadeOut 0.3s ease-in-out both;
+  position: fixed;
+  width: 100vw;
+  height: 100vhvh;
+
+  background-color: white;
+  z-index: 9998;
+
+  font-family: "KogniGear", sans-serif;
+}
+#buttons {
+  margin-top: max(16vh, 40px);
+  margin-left: 20px;
+}
+
+.menu-init {
+  display: none;
+}
+.menu-open {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: white;
+  z-index: 9998;
+  animation: fadeIn 0.3s ease-in-out both;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 1;
+    transform: translateY(-100vh);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-100vh);
+  }
+}

@@ -1,0 +1,111 @@
+import Footer from "@/app/Footer";
+import Header from "@/app/Header";
+import "@/app/App.css";
+import "math";
+import "@/styles/craftlog.css";
+
+<Header>CRAFT LOG</Header>
+
+      <div id="articlearea">
+        <div id="articleentity">
+
+251118 create
+# HPを作った（React, Nextjsをそえて）  
+
+<div  id="articleImage"  >
+  <img
+    className="titleImageOnarticle"
+    src="/asset/icon/loclogo.svg"
+    alt="mainimage"
+  />
+</div>
+
+<br />
+一昨年辺りからHPを作ろうとしては挫折してきたので，まとまった時間の在るうちに作り上げてしまおう．
+
+## 目的
+主に以下の三点
+
+1. 学んだことを気軽にアウトプットできる環境を作るため
+
+    ただアウトプットする環境がほしいだけなら，Qiitaやはてなブログでも使えば良い．
+しかしながら，
+    - クラウドで作業するのはネット接続の安定性に依存する(保存を忘れると作業が吹っ飛ぶ)
+    - オンライン作業環境はあまり拡張性がない
+    - あまり愛着が湧かない
+
+    という点によりこれらの問題点を解消しうるできるだけ簡単なフレームワークを独自に作ろうという運びになった.
+
+2. 備忘録の作成
+
+    つよつよエンジニアの持っている，有益性しかないのに備忘録とか名乗ってる謙虚なブログがかっこいいと思った．
+    でも本質的には備忘録に過ぎないので，まずは自分が再現できるように書く．
+
+3. ポートフォリオの一つとして
+
+    これからの人生のどこで役立つのでしょうか・・・？
+
+### TowerC27の名前の由来
+    Towerは私の愛読小説『図書館の魔女』に出てくる高い塔から，C27はいつしか私が居住していたトンデモオンボロ学生寮の部屋番号から．
+
+## ReactとNextjsを使うこと
+Reactを使いたかった理由はただ一つである．
+
+**生の(jQueryを使った)Javascriptを死んでも書きたくない**
+
+これである．
+jQueryもまともに理解していない現状においてjQueryかReactのどちらを学ぶべきかは明らかであった．
+いざ始めてみるとtsxは明らかにJavascriptよりも簡潔に記述できそうだったので完全に舵を切った．まあReactがJSのラッパーみたいなもんだから当然なのだけど.
+
+次にReactをちまちまと書いているとある問題点にぶち当たった．
+
+**画面遷移の張り方がわからねえ**
+
+静的サイトとはいえ，さすがに致命傷である．HTMLとはまるで勝手が違う．  
+どうやらmain.tsxなる全体構成を司るようなtsxが存在しており，そのなかにRoutingをすべて設定しなければ参照することができないようだ．つまり，本サイトをブログとして用いたとき，記事を書くたびにRoutingの設定にappendしなければならないことになる．あかん，めんどくさい．  
+というわけでReactのフレームワークであるNext.jsを使うことに決めた．選定理由はとくにない．それもそのはず，この男，ChatGPTに最初に教えてもらったものをテキトーにインストールしていたのである.  
+そして，記事を書く敷居をできるだけ下げるためMarkdownでかけるように**MDX**を導入した．
+
+### MDXについて
+Reactの中でマークダウンを使えるようにするものだと思っていただければ．  
+これの導入に当たってはかなりの苦労があったので，詰まったところを書いておく．
+1. **page.mdxなるものが存在する．**  
+    例えばNext.jsにおいて， `rootdir/app/art` までルーティングを行いたいとき， `app` 内に `art` ディレクトリをおいて，その中に `page.tsx` を置かなければならないが，
+    MDXを使うときはこれを `page.mdx` に置き換えることになる．様相も随分と異なり， `import` のプリアンブルの直後にMarkdownを始められるようになる (**Fig.1**)．  
+    いっぽうで `page.tsx` をおいて，そこからMarkdownを呼び出す方法もないではないが，Markdownに記述したHTMLタグが軒並み使えなくなることから止めた．別ライブラリで補完できる旨をChatGPTから教えてもらったが，どう考えてもいたちごっこな気がする．
+    LaTeXの別ファイルインポートみたいに使おうと思ったのだが．．．
+<figure  id="articleImage"  >
+  <img
+    src="/articleimage/cont0/figure1.png"
+    alt="mainimage"
+  />
+</figure>
+<div className="FigureCaption">Figure 1: 右が`tsx`, 左が`mdx`．tsxは基本componentの出力が必要なようで，関数的な記述を一度は入れる必要がある．</div>
+
+2. **`next.config.ts` を `next.config.mjs` という設定ファイルに書き換えないといけない**  
+    適当に `@next/mdx` を各ファイルでインポートしたらそのまま使えると思ってたすいません．
+    このあたりは Next.js の公式DocsのMDXにガッツリ書いてあるのでここでは詳細を割愛する．
+
+3. **`figure` タグ内で `figurecaption` の位置が調整できない**  
+    この記事を書いている最中に発見したことだが，`figure` タグ内で `figcaption` タグを使用すると，どうやってもキャプションがFigure上部に表示されてしまう．
+    このバグのFix方法がわからなかったので，`figure` タグの下に別に `div` ブロックを切った．
+    
+4. **buildするときにnot found errorが頻発する**
+    
+
+## デザインについて
+うｐ主はデザインに全く明るくないため，色んなサイトから構成を丸パクリさせてもらった．
+（大体はボカロPの[daniwell氏のHP](https://aidn.jp)を参考にした．まじでオサレでかっこいい．あと音作りが非常に好み）
+
+## 終わりに
+見ての通り明らかにReact初学者です．誤った理解をしていたり，もっと冴えたやり方がある場合も多々あります．部分的に参考にしていただければと思います．
+
+## 参考文献
+    - Nodejs公式Docs [https://nextjs.org/docs/pages/guides/mdx](https://nextjs.org/docs/pages/guides/mdx)
+    - Qiitaの有能チュートリアル[https://qiita.com/Sicut_study/items/afd66cac978f4b0a6e61](https://qiita.com/Sicut_study/items/afd66cac978f4b0a6e61)
+    - QiitaのNext.js構築記事 [https://qiita.com/yutakiya/items/371fec6e878e57fffa08](https://qiita.com/yutakiya/items/371fec6e878e57fffa08)
+    </div>
+</div>
+
+<Footer /> 
+ 
