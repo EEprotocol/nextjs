@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="14.064613mm"
+   height="8.6524839mm"
+   viewBox="0 0 14.064613 8.6524839"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
+   sodipodi:docname="logo.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="6.0864398"
+     inkscape:cx="1005.5139"
+     inkscape:cy="450.75612"
+     inkscape:window-width="1906"
+     inkscape:window-height="1046"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <inkscape:page
+       x="0"
+       y="0"
+       width="14.064613"
+       height="8.6524839"
+       id="page2"
+       margin="0"
+       bleed="0" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1">
+    <linearGradient
+       id="swatch2"
+       inkscape:swatch="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop2" />
+    </linearGradient>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-283.6446,-109.4187)">
+    <text
+       xml:space="preserve"
+       style="font-size:2.82223px;font-family:Arial;-inkscape-font-specification:Arial;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;white-space:pre;inline-size:4.75812;display:inline;fill:#000000;stroke:#000000;stroke-width:0.126;stroke-linecap:round;stroke-linejoin:round;paint-order:markers stroke fill"
+       x="262.66272"
+       y="100.13626"
+       id="text1-0"
+       transform="matrix(3.599704,0,0,2.7500898,-662.13073,-160.43084)"
+       inkscape:export-filename="text1-0.svg"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><tspan
+         x="262.66272"
+         y="100.13626"
+         id="tspan2"><tspan
+           style="font-family:KogniGear;-inkscape-font-specification:KogniGear"
+           id="tspan1">EE</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:2.66163px;font-family:Arial;-inkscape-font-specification:Arial;text-align:start;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000;stroke:#000000;stroke-width:0.11883;stroke-linecap:round;stroke-linejoin:round;paint-order:markers stroke fill"
+       x="267.22342"
+       y="124.73244"
+       id="text3-9"
+       transform="scale(1.061178,0.94234898)"><tspan
+         sodipodi:role="line"
+         id="tspan3-1"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:KogniGear;-inkscape-font-specification:KogniGear;stroke-width:0.11883"
+         x="267.22342"
+         y="124.73244">protocol</tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.11883"
+         x="267.22342"
+         y="128.05948"
+         id="tspan4-7" /></text>
+  </g>
+</svg>
