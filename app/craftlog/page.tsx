@@ -12,10 +12,10 @@ import Header from "@/app/Header";
 const contentlist = [
   {
     id: "cont0",
-    date: 251111,
+    date: 251121,
     title: "Web Page with React!",
     image: "/asset/icon/loclogo.svg",
-    tag: ["React", "HTML", "CSS"],
+    tag: ["React", "Next.js", "CSS"],
     color: "#eeeecc",
     link: "/craftlog/article/cont0",
   },

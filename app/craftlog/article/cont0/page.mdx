@@ -10,10 +10,20 @@ import "@/styles/craftlog.css";
       <div id="articlearea">
         <div id="articleentity">
 
-251118 create
-# HPを作った（React, Nextjsをそえて）  
+<div id="titlebox">
+    <div id="blackline">
+    </div>
+    <div id="datetitle">
+        <div id="date">
+        251118
+        </div>
+        <div id="title">
+        # HPを作った（React, Nextjsをそえて）
+        </div>
+    </div>
+</div>
 
-<div  id="articleImage">
+<div  id="articletitleImage">
   <img
     src="/asset/icon/loclogo.svg"
     alt="mainimage"
@@ -40,6 +50,7 @@ import "@/styles/craftlog.css";
 
     つよつよエンジニアの持っている，有益性しかないのに備忘録とか名乗ってる謙虚なブログがかっこいいと思った．
     でも本質的には備忘録に過ぎないので，まずは自分が再現できるように書く．
+  {}
 
 3. ポートフォリオの一つとして
 
@@ -80,7 +91,7 @@ Reactの中でマークダウンを使えるようにするものだと思って
     alt="mainimage"
   />
 </figure>
-<div className="FigureCaption">Figure 1: 右が`tsx`, 左が`mdx`．tsxは基本componentの出力が必要なようで，関数的な記述を一度は入れる必要がある．</div>
+<div className="FigureCaption">Figure 1: 右が`tsx`, 左が`mdx`．`tsx`は基本componentの出力が必要なようで，関数的な記述を一度は入れる必要がある．</div>
 
 2. **`next.config.ts` を `next.config.mjs` という設定ファイルに書き換えないといけない**  
     適当に `@next/mdx` を各ファイルでインポートしたらそのまま使えると思ってたすいません．

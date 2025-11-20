@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
         </a>
       </div>
 
-      <div className="rire">©2025 EEprotocol, All right reserved.</div>
+      <div className="rire">©2025 EEprotocol, All rights reserved.</div>
     </footer>
   );
 };
