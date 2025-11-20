@@ -75,7 +75,7 @@ svg {
   position: absolute;
   left: 15pt;
   cursor: pointer;
-  margin-top: 10px;
+  margin-top: 30px;
 }
 
 /* 円の大きさを変えたい場合ここだけ変更 */
@@ -150,7 +150,6 @@ svg {
   font-family: "KogniGear", sans-serif;
   font-size: max(4vh, 20pt);
   color: black;
-  margin-top: 2.2vh;
   margin-bottom: 2.2vh;
 }
 .menu-open #buttons .custom-btn:hover {
@@ -168,7 +167,7 @@ svg {
   font-family: "KogniGear", sans-serif;
 }
 #buttons {
-  margin-top: max(16vh, 40px);
+  margin-top: max(20vh, 40px);
   margin-left: 20px;
 }
 
