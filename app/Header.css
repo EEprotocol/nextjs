@@ -72,11 +72,12 @@ svg {
   margin-left: 20px;
 }
 #logobox {
-  position: absolute;
   left: 15pt;
   cursor: pointer;
   margin-top: 30px;
+  margin-left: 20px;
 }
+
 
 /* 円の大きさを変えたい場合ここだけ変更 */
 :root {
@@ -159,7 +160,7 @@ svg {
   animation: fadeOut 0.3s ease-in-out both;
   position: fixed;
   width: 100vw;
-  height: 100vhvh;
+  height: 100vh;
 
   background-color: white;
   z-index: 9998;
@@ -167,7 +168,7 @@ svg {
   font-family: "KogniGear", sans-serif;
 }
 #buttons {
-  margin-top: max(20vh, 40px);
+  margin-top: max(10vh, 40px);
   margin-left: 20px;
 }
 
