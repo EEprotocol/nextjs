@@ -81,7 +81,7 @@ const App: React.FC = () => {
       <img id="mainlogo" src="asset/icon/loclogo.svg" alt="EEprotocol Logo" />
 
       <div style={{ marginLeft: "15pt" }}>
-        Welcome to EEprotocol (Keisuke Kondo)'s TowerC27!
+        Welcome to EEprotocol's TowerC27!
       </div>
 
       <div className="initplay" id="initplay">
