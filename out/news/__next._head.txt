@@ -1,0 +1,8 @@
+1:"$Sreact.fragment"
+2:I[24298,["/_next/static/chunks/a48fa9e1a82b6c6d.js","/_next/static/chunks/a76a144d75f1a321.js"],"ViewportBoundary"]
+4:I[24298,["/_next/static/chunks/a48fa9e1a82b6c6d.js","/_next/static/chunks/a76a144d75f1a321.js"],"MetadataBoundary"]
+5:"$Sreact.suspense"
+7:I[86399,["/_next/static/chunks/a48fa9e1a82b6c6d.js","/_next/static/chunks/a76a144d75f1a321.js"],"IconMark"]
+0:{"buildId":"Sc-z7of5tDlXKqRssZNlH","rsc":["$","$1","h",{"children":[null,["$","$L2",null,{"children":"$@3"}],["$","div",null,{"hidden":true,"children":["$","$L4",null,{"children":["$","$5",null,{"name":"Next.Metadata","children":"$@6"}]}]}],null]}],"loading":null,"isPartial":false}
+3:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+6:[["$","title","0",{"children":"TowerC27 | EEprotocol"}],["$","meta","1",{"name":"description","content":"EEprotocol (Keisuke Kondo) Official site"}],["$","link","2",{"rel":"icon","href":"/favicon.ico?favicon.760606e3.ico","sizes":"48x48","type":"image/x-icon"}],["$","$L7","3",{}]]

@@ -1,0 +1,6 @@
+:HL["/_next/static/chunks/e90e0a4574d2e6d7.css","style"]
+:HL["/_next/static/chunks/c7b7a67bf9d0adbe.css","style"]
+:HL["/_next/static/chunks/24ffc3efea8a4708.css","style"]
+:HL["/asset/icon/loclogo.svg","image"]
+:HL["/articleimage/cont0/figure1.png","image"]
+0:{"buildId":"Sc-z7of5tDlXKqRssZNlH","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"craftlog","paramType":null,"paramKey":"craftlog","hasRuntimePrefetch":false,"slots":{"children":{"name":"article","paramType":null,"paramKey":"article","hasRuntimePrefetch":false,"slots":{"children":{"name":"cont0","paramType":null,"paramKey":"cont0","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
