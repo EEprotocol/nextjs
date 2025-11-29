@@ -111,8 +111,8 @@
 
 }
 #articletitleImage img{
-  max-width: 800px;
   width:50vh;
+  max-width: 85vw;
 }
 a{text-decoration: none;}
 .FigureCaption{
