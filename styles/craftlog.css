@@ -1,17 +1,25 @@
-#contentlist{
+.wrapper {
   display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+#contentlist {
   margin-top: 8vh;
   margin-bottom: 4vh;
-  margin-left: 3vw;
-  flex-wrap: wrap;
-  max-width:94vw;
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: repeat(auto-fill, 350px);
+  gap: 10px;
+
+  max-width: 94vw;
+  width: max-content;    /* ← wrap 後の実寸で箱が縮む */
 }
 #content{
   width:350px;
   height: 240px;
   cursor: pointer;
   overflow: hidden;
-  margin-left:10px;
 }
 @font-face {
   font-family: "BIZUDPMincho"; /* 任意の名前 */

@@ -36,7 +36,8 @@ const App: React.FC = () => {
   return (
     <div>
       <Header>CRAFT LOG</Header>
-      <div id="contentlist" style={{ display: "flex" }}>
+      <div className="wrapper">
+      <div id="contentlist">
         {contentlist.map((cont) => (
           <Link id="content" key={cont.id} href={cont.link}>
             <div
@@ -59,8 +60,9 @@ const App: React.FC = () => {
             </div>
           </Link>
         ))}
-      </div>
 
+      </div>
+      </div>
       <Footer />
     </div>
   );
