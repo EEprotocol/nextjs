@@ -27,16 +27,18 @@ const contentlist = [
     tag: ["DDNS", "server"],
     color: "#60aad0",
     link: "/craftlog/article/cont1",
-  }
+  },
+
 ];
 
+contentlist.reverse();
 const App: React.FC = () => {
   return (
     <div>
       <Header>CRAFT LOG</Header>
       <div id="contentlist" style={{ display: "flex" }}>
         {contentlist.map((cont) => (
-          <Link key={cont.id} href={cont.link}>
+          <Link id="content" key={cont.id} href={cont.link}>
             <div
               key={cont.id} // keyはmapの外側の最上位divに
               id="colortag"
@@ -47,7 +49,6 @@ const App: React.FC = () => {
               <div id="contdate">{cont.date}</div>
 
               <div
-                id="content"
                 onClick={() => (window.location.href = cont.link)}
               >
                 <div id="contenttitle">{cont.title}</div>
