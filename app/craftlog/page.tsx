@@ -19,6 +19,15 @@ const contentlist = [
     color: "#eeeecc",
     link: "/craftlog/article/cont0",
   },
+{
+    id: "cont1",
+    date: 251128,
+    title: "DDNS to Rental Server",
+    image: "/articleimage/cont1/title.svg",
+    tag: ["DDNS", "server"],
+    color: "#60aad0",
+    link: "/craftlog/article/cont1",
+  }
 ];
 
 const App: React.FC = () => {

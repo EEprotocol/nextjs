@@ -1,0 +1,94 @@
+import Footer from "@/app/Footer";
+import Header from "@/app/Header";
+import "@/app/App.css";
+import "math";
+import "@/styles/craftlog.css";
+
+<Header>CRAFT LOG</Header>
+
+      <div id="articlearea">
+        <div id="articleentity">
+
+<div id="titlebox">
+    <div id="blackline">
+    </div>
+    <div id="datetitle">
+        <div id="date">
+        251128
+        </div>
+        <div id="title">
+         DDNSでレンタルサーバーにアクセスする（スターレンタルサーバー，MyDNS）
+        </div>
+    </div>
+</div>
+
+<div  id="articletitleImage">
+  <img
+    src="/articleimage/cont1/title.svg"
+    alt="mainimage"
+  />
+</div>
+
+<br />
+
+## 背景
+最近HPを自宅サーバーから公開しようとして，私の住んでいる寮のネットワークのポート設定をいじる権限がなく頓挫してしまった．  
+とはいえ，将来的には自宅から公開というのもやってみたいし，それもできるだけ金をかけたくない．  
+それなら，まともなドメインを取ってくるよりもレンタルサーバーだけを借りて，DDNSでアクセスできるようにすればお安く上がるし将来的な目的にも適うんじゃね？という話．  
+
+ちなみにこの構想を思いついたのが**有料ドメインを取った後だった**のでこの記事は実質無意味である.  
+故に上の動機もほぼ後付である．
+
+
+
+## 環境
+- **MyDNS** でドメインを取得し，
+- **スターレンタルサーバ**に各種ファイルをぶち込んでおく.
+
+## 手順  
+ドメイン取得，ならびにサーバーのレンタルが完了していることを前提とする.
+
+1. ドメインの記録  
+スターレンタルサーバーのサーバーパネル内，ドメイン設定から設定したいドメインを記録する．このときドメインの所有者が自分であることを認証する必要がある．
+私は当該ドメインのDNSレコードでTXT属性にてトークンを設定して認証した(**Fig. 1**)．反映が終わるとNS相違だとかSSLがつかえないだとか表示が出る．
+おそらく，この時点でもhttp://〜なら，つながる．
+<figure  id="articleImage"  >
+  <img
+    src="/articleimage/cont1/fig1.svg"
+    alt="mainimage"
+  />
+</figure>
+<div className="FigureCaption">**Figure 1. MyDNSの設定画面** 赤四角が認証部分のTXT．</div>
+
+2. SSLを設定する  
+このご時世，httpだと通信が暗号化されないので多くのウェブブラウザから怪しいサイト判定を食らう．せめてSSLくらい使えるようにしたい．  
+サーバーパネルの中のDNSレコード設定から対象ドメインのNS（ネームサーバ）を変更する．  
+NSのContentには
+
+    - `ns0.mydns.jp`
+    - `ns1.mydns.jp`
+    - `ns2.mydns.jp`  
+
+    のいずれか，またはそのすべてを設定する（**Fig. 2A**）.  
+    その後SSLの鍵生成を行う．ここでまたサブドメイン（*, www）による認証を求められる．どうやらこの２つのサブドメインでSSL trialを行うらしい．例によってDNSレコードの中にTXTでトークンを設定する方法を取った．ここでHostnameには`_acme-challenge(.www)`なんたらと云うサブドメインすべて入力すること(**Fig. 2B**)．
+<figure  id="articleImage"  >
+  <img
+    src="/articleimage/cont1/fig2.svg"
+    alt="mainimage"
+  />
+</figure>
+<div className="FigureCaption">**Figure 2. NS関連設定** (A)DNSレコードの設定画面(B)赤四角内のHostNameを参照</div>
+
+3. 最終的にNS相違と出続けるが，これで一通りSSL通信は可能になる．　お疲れ様！
+
+## 終わりに  
+さぁ，この記事は一体誰得なんだ？あと，.netの方はどう運用しようか．．．
+
+
+## 参考文献
+    - MyDNS HOW TO USE [https://www.mydns.jp/#howtouse](https://www.mydns.jp/#howtouse)
+    </div>
+</div>
+
+<Footer /> 
+ 

@@ -35,14 +35,11 @@
 }
 .contentimage{
   height: auto;
-  margin-left: 20px;
+  margin-left: 30px;
 
 }
 .contentimage img {
-  max-width: 100%;       /* 親幅を超えない */
-  max-height: 100%;      /* 親高さを超えない */
-  width: auto;
-  height: auto;
+  height: 200px;
 }
 #colortag{
   width:127px;
@@ -79,6 +76,7 @@
   width: 55%;
   margin:0 auto;
   line-height: 1.3;
+  font-size: 13.5pt;
 
 }
 
@@ -86,7 +84,7 @@
   background-color:black;
   color: white;
 }
-@media(max-width:768px){
+@media(max-width:900px){
   #articleentity{
     width:85%;
   }
@@ -104,8 +102,9 @@
   max-width: 800px;
 
 }
-#articletitleImage{
+#articletitleImage img{
   max-width: 800px;
+  width:50vh;
 }
 a{text-decoration: none;}
 .FigureCaption{
