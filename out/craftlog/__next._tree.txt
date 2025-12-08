@@ -1,5 +1,5 @@
 :HL["/_next/static/chunks/9d9c5ff346858596.css","style"]
-:HL["/_next/static/chunks/e90e0a4574d2e6d7.css","style"]
-:HL["/_next/static/chunks/de9eade2e2a20a56.css","style"]
+:HL["/_next/static/chunks/a089a459dbc8f1e1.css","style"]
+:HL["/_next/static/chunks/0449c7a03863b8d7.css","style"]
 :HL["/_next/static/chunks/bf29a508a1541515.css","style"]
-0:{"buildId":"YggfhFq-wZ1D4kZckddd2","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"craftlog","paramType":null,"paramKey":"craftlog","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+0:{"buildId":"EGX3bG5CmeEmYTPJfrD0S","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"craftlog","paramType":null,"paramKey":"craftlog","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
