@@ -11,7 +11,7 @@
   grid-auto-flow: row;
   grid-template-columns: repeat(auto-fill, 350px);
   max-width: 94vw;
-  gap:5px;
+  gap:10px;
   width: max-content;    /* ← wrap 後の実寸で箱が縮む */
 }
 #content{

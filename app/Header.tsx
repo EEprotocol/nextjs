@@ -14,6 +14,7 @@ function Header({ children }: { children: React.ReactNode }) {
       if (children === "CRAFT LOG") setPath("/craftlog");
       else if (children === "ABOUT") setPath("/about");
       else if (children === "NEWS") setPath("/news");
+      else if (children === "LINK") setPath("/link");
     }
   }, [children]);
 
