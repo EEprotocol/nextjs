@@ -19,6 +19,11 @@ const App: React.FC = () => {
             src="https://avatars.githubusercontent.com/u/94507209?s=40&v=4"
             alt="EEprotocol"
           />
+          <img
+            id="portraitimage"
+            src="/asset/icon/eplogo.svg"
+            alt="EEprotocol"
+          />
         </div>
       </div>
       <div className="description">
