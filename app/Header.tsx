@@ -32,6 +32,7 @@ function Header({ children }: { children: React.ReactNode }) {
           <p><button className="custom-btn" onClick={() => (window.location.href = "/craftlog")}>CRAFT LOG</button></p>
           <p><button className="custom-btn" onClick={() => (window.location.href = "/news")}>NEWS</button></p>
           <p><button className="custom-btn" onClick={() => (window.location.href = "/about")}>ABOUT</button></p>
+          <p><button className="custom-btn" onClick={() => (window.location.href = "/link")}>LINK</button></p>
         </div>
       </div>
 

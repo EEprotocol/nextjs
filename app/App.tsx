@@ -99,6 +99,9 @@ const App: React.FC = () => {
           <p>
             <button className="custom-btn btn-1" onClick={() => (window.location.href = "/about")}>ABOUT</button>
           </p>
+          <p>
+            <button className="custom-btn btn-1" onClick={() => (window.location.href = "/link")}>LINK</button>
+          </p>
         </div>
       </div>
 

@@ -4,7 +4,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "TowerC27 | EEprotocol",
-  description: "EEprotocol (Keisuke Kondo) Official site",
+  description: "EEprotocol  ) Official site",
 };
 
 export default function RootLayout({

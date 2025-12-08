@@ -10,16 +10,20 @@
   display: grid;
   grid-auto-flow: row;
   grid-template-columns: repeat(auto-fill, 350px);
-  gap: 10px;
-
   max-width: 94vw;
   width: max-content;    /* ← wrap 後の実寸で箱が縮む */
 }
 #content{
   width:350px;
-  height: 240px;
+  height: 210px;
   cursor: pointer;
   overflow: hidden;
+  border:5px solid transparent;
+}
+#content:hover{
+  border:5px solid black;
+
+  
 }
 @font-face {
   font-family: "BIZUDPMincho"; /* 任意の名前 */
@@ -50,12 +54,13 @@
 
 }
 .contentimage img {
-  height: 180px;
+  height: 170px;
   margin-bottom: 0;
 }
 #colortag{
   width:127px;
   position: relative;
+  height: 210px;
 }
 #contdate{
   rotate:-90deg;
@@ -88,10 +93,6 @@
 
 }
 
-::selection{
-  background-color:black;
-  color: white;
-}
 @media(max-width:900px){
   #articleentity{
     width:85%;

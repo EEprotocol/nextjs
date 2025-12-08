@@ -1,4 +1,4 @@
-//cont0.tsx
+//news/page.tsx
 "use client";
 import React from "react";
 import "@/app/App.css";

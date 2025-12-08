@@ -127,3 +127,22 @@ svg {
     display: none;
   }
 }
+
+@font-face {
+  font-family: "BIZUDPMincho"; /* 任意の名前 */
+  src: url("/asset/BIZUDPMincho-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+.linklist{
+  margin-top:30px;
+  margin-left: 15pt;
+  margin-right: 15pt;
+  margin-bottom:10px;
+  font-size: 20pt;
+  font-weight: bold;
+  font-family: "BIZUDPMincho", sans-serif;
+}
+.linker{
+  width: 300px;
+}

@@ -1,4 +1,5 @@
 //craftlog/page.tsx
+//u
 "use client";
 // src/App.tsx
 import Link from "next/link";
@@ -8,6 +9,7 @@ import "@/styles/craftlog.css";
 import "math";
 import Footer from "@/app/Footer";
 import Header from "@/app/Header";
+import { Metadata } from "next";
 
 const contentlist = [
   {
@@ -31,6 +33,8 @@ const contentlist = [
 
 ];
 
+
+
 contentlist.reverse();
 const App: React.FC = () => {
   return (
@@ -47,7 +51,6 @@ const App: React.FC = () => {
                 backgroundColor: cont.color,
               }}
             >
-              <div id="contdate">{cont.date}</div>
 
               <div
                 onClick={() => (window.location.href = cont.link)}
@@ -57,6 +60,7 @@ const App: React.FC = () => {
                   <img src={cont.image} alt={cont.title} />
                 </div>
               </div>
+              <div id="contdate">{cont.date}</div>
             </div>
           </Link>
         ))}
