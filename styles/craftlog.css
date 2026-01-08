@@ -55,7 +55,7 @@
 
 }
 .contentimage img {
-  height: 170px;
+  width: 300px;
   margin-bottom: 0;
 }
 #colortag{
@@ -127,10 +127,10 @@ figure {
   margin: 0;
 }
 
+
 code{
   background-color: #eeeeee;
   font-family: "CaskaydiaMono", sans-serif;
-  
 }
 
 #titlebox{

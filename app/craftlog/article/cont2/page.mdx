@@ -1,4 +1,3 @@
-
 import Footer from "@/app/Footer";
 import Header from "@/app/Header";
 import "@/app/App.css";
@@ -15,108 +14,82 @@ import "@/styles/craftlog.css";
     </div>
     <div id="datetitle">
         <div id="date">
-        251121
+        260106
         </div>
         <div id="title">
-        フォトダイオードはコンパレータを使うといい感じになる
+        Joplinとかいうセルフホスト型ノートサーバをRaspiを通して使ってみる
         </div>
     </div>
 </div>
 
 <div  id="articletitleImage">
   <img
-    src="/asset/icon/loclogo.svg"
+    src="/articleimage/cont2/title.svg"
     alt="mainimage"
   />
 </div>
 
 <br />
 
-## 目的
-主に以下の三点
-
-1. 学んだことを気軽にアウトプットできる環境を作るため
-
-    ただアウトプットする環境がほしいだけなら，Qiitaやはてなブログでも使えば良い．
-しかしながら，
-    - クラウドで作業するのはネット接続の安定性に依存する(保存を忘れると作業が吹っ飛ぶ)
-    - オンライン作業環境はあまり拡張性がない
-    - あまり愛着が湧かない
-
-    という点によりこれらの問題点を解消しうるできるだけ簡単なフレームワークを独自に作ろうという運びになった.
-
-2. 備忘録の作成
-
-    つよつよエンジニアの持っている，有益性しかないのに備忘録とか名乗ってる謙虚なブログがかっこいいと思った．
-    でも本質的には備忘録に過ぎないので，まずは自分が再現できるように書く．
-
-3. ポートフォリオの一つとして
-
-    これからの人生のどこで役立つのでしょうか・・・？
-
-### TowerC27の名前の由来
-    Towerは私の愛読小説『図書館の魔女』に出てくる高い塔から，C27はいつしか私が居住していたトンデモオンボロ学生寮の部屋番号から．
-
-## ReactとNextjsを使うこと
-Reactを使いたかった理由はただ一つである．
-
-**生の(jQueryを使った)Javascriptを死んでも書きたくない**
-
-これである．
-jQueryもまともに理解していない現状においてjQueryかReactのどちらを学ぶべきかは明らかであった．
-いざ始めてみるとtsxは明らかにJavascriptよりも簡潔に記述できそうだったので完全に舵を切った．まあReactがJSのラッパーみたいなもんだから当然なのだけど.
-
-次にReactをちまちまと書いているとある問題点にぶち当たった．
-
-**画面遷移の張り方がわからねえ**
-
-静的サイトとはいえ，さすがに致命傷である．HTMLとはまるで勝手が違う．  
-どうやらmain.tsxなる全体構成を司るようなtsxが存在しており，そのなかにRoutingをすべて設定しなければ参照することができないようだ．つまり，本サイトをブログとして用いたとき，記事を書くたびにRoutingの設定にappendしなければならないことになる．あかん，めんどくさい．  
-というわけでReactのフレームワークであるNext.jsを使うことに決めた．選定理由はとくにない．それもそのはず，この男，ChatGPTに最初に教えてもらったものをテキトーにインストールしていたのである.  
-そして，記事を書く敷居をできるだけ下げるためMarkdownでかけるように**MDX**を導入した．
-
-### MDXについて
-Reactの中でマークダウンを使えるようにするものだと思っていただければ．  
-これの導入に当たってはかなりの苦労があったので，詰まったところを書いておく．
-1. **page.mdxなるものが存在する．**  
-    例えばNext.jsにおいて， `rootdir/app/art` までルーティングを行いたいとき， `app` 内に `art` ディレクトリをおいて，その`art`ディレクトリ中に `page.tsx` を置かなければならないが，
-    MDXを使うときはこれを `page.mdx` に置き換えることになる．様相も`page.tsx`とは異なり， `import` のプリアンブルの直後にMarkdownを始められるようになる (**Fig.1**)．  
-    いっぽうで `page.tsx` をおいて，そこからMarkdownを呼び出す方法もないではないが，Markdownに記述したHTMLタグが軒並み使えなくなることから止めた．別ライブラリで補完できる旨をChatGPTから教えてもらったが，どう考えてもいたちごっこな気がする．
-    LaTeXの別ファイルインポートみたいに使おうと思ったのだが．．．
-<figure  id="articleImage"  >
-  <img
-    src="/articleimage/cont0/figure1.png"
-    alt="mainimage"
-  />
-</figure>
-<div className="FigureCaption">Figure 1: 右が`tsx`, 左が`mdx`．`tsx`は基本componentの出力が必要なようで，関数的な記述を一度は入れる必要がある．</div>
-
-2. **`next.config.ts` を `next.config.mjs` という設定ファイルに書き換えないといけない**  
-    適当に `@next/mdx` を各ファイルでインポートしたらそのまま使えると思ってたすいません．
-    このあたりは Next.js の公式DocsのMDXにガッツリ書いてあるのでここでは詳細を割愛する．
-
-3. **`figure` タグ内で `figurecaption` の位置が調整できない**  
-    この記事を書いている最中に発見したことだが，`figure` タグ内で `figcaption` タグを使用すると，どうやってもキャプションがFigure上部に表示されてしまう．
-    このバグのFix方法がわからなかったので，`figure` タグの下に別に `div` ブロックを切った．
-    
-    
-
-## デザインについて
-うｐ主はデザインに全く明るくないため，色んなサイトから構成を丸パクリさせてもらった．
-（大体はボカロPの[daniwell氏のHP](https://aidn.jp)を参考にした．まじでオサレでかっこいい．あと音作りが非常に好み）
-
-## 終わりに
-見ての通り明らかにReact初学者です．誤った理解をしていたり，もっと冴えたやり方がある場合も多々あります．部分的に参考にしていただければと思います.  
-
-## 謝辞
-本サイトを作るきっかけとなったnktsnj氏，Next.jsの存在を教えてくれた登坂車線氏，外部ロゴマークの使用法を注意してくれたsalt氏，お手本となるサイトを作ってくださったDaniwell氏，デバッグに協力してくれたnieseln氏，Next.jsを開発してくれたVercel社，Reactを開発してくれたMeta社，その他本サイト制作について潜在的に助力いただいた各位に感謝を申し上げます.
+たまには無駄話でも.  
+  
+明けましておめでとうございます．今年もゆるめの『てくのろじぃ』ぐらいのことを続けていきたいと思います．  
+  
+なんだか最近私の周りでも結婚という<s>謎ワード</s>おめでたい言葉が聞こえてくるようになった．もうそんな年齢になっちまったのかと感慨深い限りである．
+一方で，おそらくそんなものとは無縁の人生を征くであろう私は，独り身としての身の振り方を用意しておく必要を感じ始めている．生きる目的について度々問題提起を投げかける友人の心持ちがすこし解った気がする．
 
 
+## サーバーのフル活用を目指して．．．
+
+以前NextcloudをRaspiサーバーに建てたときに色々と機能を持っていることに気がついた．具体的にはSelf-HostのチャットツールであるNextcloud Talkや，ノートアプリであるNextcloud Noteである．せっかくサーバーを立てるならスマホや別PCでも使いたいところなので，
+それぞれについて，各デバイスでの設定を進めていたのだが，Android版のNoteが設定できなかった．権限エラーとか言っていたが，修理方法がわからなかったので，思い切って別のノートサーバを立ててみることにした．
+
+### Obsidian? Joplin?
+Reddit を徘徊していると，ノートサーバーとして有名なのは**Obsidian**と**Joplin**の2つだった．どうやら2つともAndroidアプリがあるようなので正直どちらでも良かったのだが，Dockerを使ったやり方がわかりやすかったのでJoplinを採用．
+
+## dockerを建てよう
+以下にdocker-composeを示す．
+
+```yaml title=docker-compose.yml showLineNumbers
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: joplin-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: joplin
+      POSTGRES_USER: joplin
+      POSTGRES_PASSWORD: password
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+
+  app:
+    image: joplin/server:latest
+    container_name: joplin
+    depends_on:
+      - postgres
+    ports:
+      - "22300:22300"
+    APP_BASE_URL:http://100.118.15.7:22300
+    restart: unless-stopped
+
+```
+
+これを  
+```docker-compose up -d```
+で起動.クソ簡単．
+
+## 仕様として
+- Joplin上のノートをブラウザで編集することはできない．何らかのクライアントアプリをインストールする必要がある．  
+私はArchlinux信奉者なので  
+```yay -S joplin```  
+でCLIアプリをいんすこした．
+あとこのアプリ，nvimだとうまく保存できなかったので注意.
 
 ## 参考文献
-    - Nodejs公式Docs [https://nextjs.org/docs/pages/guides/mdx](https://nextjs.org/docs/pages/guides/mdx)
-    - Qiitaの有能チュートリアル[https://qiita.com/Sicut_study/items/afd66cac978f4b0a6e61](https://qiita.com/Sicut_study/items/afd66cac978f4b0a6e61)
-    - QiitaのNext.js構築記事 [https://qiita.com/yutakiya/items/371fec6e878e57fffa08](https://qiita.com/yutakiya/items/371fec6e878e57fffa08)
+    - Joplin Serverをdockerで構築 [https://blog.picocake.com/index.php/2023/05/16/joplin_server/](https://blog.picocake.com/index.php/2023/05/16/joplin_server/)
     </div>
 </div>
 

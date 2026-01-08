@@ -1,11 +1,15 @@
 //cont0.tsx
-"use client";
 import React from "react";
 import "@/app/App.css";
 import "math";
 import Footer from "@/app/Footer";
 import Header from "@/app/Header";
 import "./about.css";
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "ABOUT | TowerC27",
+  description: "Profile of EEprotocol",
+};
 
 const App: React.FC = () => {
   return (
